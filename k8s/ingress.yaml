@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: github-insights-pro-ingress
+  namespace: github-insights-pro
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: "letsencrypt-prod" # If using cert-manager
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - github-insights-pro.example.com # Replace with your domain
+    secretName: github-insights-pro-tls
+  rules:
+  - host: github-insights-pro.example.com # Replace with your domain
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: github-insights-pro-service
+            port:
+              number: 80
