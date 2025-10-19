@@ -1,40 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# GitHub Insights
 
-## Getting Started
+Комплексная аналитическая платформа для глубокого анализа GitHub репозиториев, предоставляющая инсайты для разработчиков и менеджеров проектов.
 
-First, run the development server:
+## 🎯 Цель проекта
+
+Разработка аналитической платформы, которая помогает:
+
+- **Tech Leads** оценивать состояние проектов и активность команд
+- **Project Managers** сравнивать вклад участников команды
+- **Open-source maintainers** отслеживать здоровье и устойчивость проектов
+- **IT рекрутерам** анализировать профили разработчиков
+
+## 🚀 Ключевые возможности
+
+### 📊 Анализ репозитория
+
+- Activity heatmap (коммиты по времени)
+- Pull Request и Issue статистика
+- Code frequency charts и языковое распределение
+- Метрики health score и bus factor
+
+### 👥 Анализ команды
+
+- Сравнение вклада разработчиков
+- Code review activity и patterns
+- Skill radar charts для технических навыков
+- Collaborative analysis и trends
+
+### 🏥 Мониторинг здоровья проекта
+
+- Time to first response и PR merge time
+- Issue resolution rate и age distribution
+- Bus factor calculation и risk indicators
+- Sustainability metrics и automated alerts
+
+## 🛠 Технологический стек
+
+- **Frontend**: Next.js 15, React 19, TypeScript
+- **UI Library**: Mantine UI 8.3+
+- **Charts**: Mantine Charts для визуализации данных
+- **Icons**: Tabler Icons
+- **Styling**: Tailwind CSS + Mantine компоненты
+- **Routing**: Next.js Pages Router
+
+## 🎨 Дизайн-система
+
+### Цветовая схема
+
+- Поддержка светлой и темной темы (WCAG 2.1 AA)
+- Основные цвета: синий (#228be6), зеленый (#40c057)
+- Статусные цвета: зеленый (здоровье), желтый (предупреждение), красный (критично)
+
+### Typography
+
+- Основной шрифт: Inter font family
+- Модульная система заголовков и текста
+
+### Components
+
+- Модульная дизайн-система на основе Mantine UI
+- Responsive дизайн для всех устройств (320px - 1200px+)
+
+## Запуск проекта
+
+### Установка зависимостей
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Запуск development сервера
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Сборка для production
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+```bash
+pnpm build
+pnpm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📱 Основные страницы и сценарии
 
-## Learn More
+### 1. Главная страница (`/`)
 
-To learn more about Next.js, take a look at the following resources:
+- Поиск репозитория для анализа
+- Быстрые примеры популярных репозиториев
+- Навигация по разделам
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+### 2. Repository Dashboard (`/repository/[owner]/[repo]`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Обзор основных метрик (stars, forks, watchers, health score)
+- Графики активности и языкового распределения
+- Таблица топ контрибьюторов
+- Анализ PR и Issues
 
-## Deploy on Vercel
+### 3. Developer Profile (`/developer/[username]`)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Профиль разработчика с основной информацией
+- Contribution heatmap
+- Skill radar chart
+- Список репозиториев и активности
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### 4. Team Analytics (`/team-analytics`)
+
+- Сравнение производительности команды
+- Фильтрация по репозиториям и временным периодам
+- Radar charts для навыков команды
+- Детальная таблица метрик
+
+### 5. Project Health (`/project-health`)
+
+- Мониторинг здоровья проекта в реальном времени
+- Trends и исторические данные
